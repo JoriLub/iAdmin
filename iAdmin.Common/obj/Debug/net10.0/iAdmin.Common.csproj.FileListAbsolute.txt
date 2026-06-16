@@ -1,0 +1,12 @@
+D:\Projects\LubSoft\iAdmin\iAdmin.Common\bin\Debug\net10.0\iAdmin.Common.deps.json
+D:\Projects\LubSoft\iAdmin\iAdmin.Common\bin\Debug\net10.0\iAdmin.Common.dll
+D:\Projects\LubSoft\iAdmin\iAdmin.Common\bin\Debug\net10.0\iAdmin.Common.pdb
+D:\Projects\LubSoft\iAdmin\iAdmin.Common\obj\Debug\net10.0\iAdmin.Common.csproj.AssemblyReference.cache
+D:\Projects\LubSoft\iAdmin\iAdmin.Common\obj\Debug\net10.0\iAdmin.Common.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\LubSoft\iAdmin\iAdmin.Common\obj\Debug\net10.0\iAdmin.Common.AssemblyInfoInputs.cache
+D:\Projects\LubSoft\iAdmin\iAdmin.Common\obj\Debug\net10.0\iAdmin.Common.AssemblyInfo.cs
+D:\Projects\LubSoft\iAdmin\iAdmin.Common\obj\Debug\net10.0\iAdmin.Common.csproj.CoreCompileInputs.cache
+D:\Projects\LubSoft\iAdmin\iAdmin.Common\obj\Debug\net10.0\iAdmin.Common.dll
+D:\Projects\LubSoft\iAdmin\iAdmin.Common\obj\Debug\net10.0\refint\iAdmin.Common.dll
+D:\Projects\LubSoft\iAdmin\iAdmin.Common\obj\Debug\net10.0\iAdmin.Common.pdb
+D:\Projects\LubSoft\iAdmin\iAdmin.Common\obj\Debug\net10.0\ref\iAdmin.Common.dll

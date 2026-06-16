@@ -1,0 +1,6 @@
+@iAdmin.Server_HostAddress = http://localhost:5283
+
+GET {{iAdmin.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

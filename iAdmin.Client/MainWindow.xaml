@@ -1,0 +1,115 @@
+﻿<Window x:Class="iAdmin.Client.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:iAdmin.Client"
+        mc:Ignorable="d"
+        Title="iAdmin - Administrator Mode" 
+        Height="600" Width="800"
+        WindowStartupLocation="CenterScreen">
+    <Grid Background="#F5F5F5">
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="400"
+                    Visibility="{Binding IsAuthenticated, Converter={StaticResource InverseBoolToVisibilityConverter}}">
+            <!-- Header -->
+            <TextBlock Text="iAdmin" 
+                       FontSize="32" 
+                       FontWeight="Bold" 
+                       Foreground="#0066CC" 
+                       TextAlignment="Center" 
+                       Margin="0,0,0,10"/>
+            
+            <TextBlock Text="Administrator Mode Authenticatie" 
+                       FontSize="14" 
+                       Foreground="#666666" 
+                       TextAlignment="Center" 
+                       Margin="0,0,0,30"/>
+            
+            <!-- Login Form -->
+            <Border BorderBrush="#E0E0E0" BorderThickness="1" CornerRadius="8" Background="White" Padding="30">
+                <StackPanel>
+                    <!-- Username -->
+                    <TextBlock Text="Gebruikersnaam:" FontSize="12" FontWeight="SemiBold" Margin="0,0,0,8"/>
+                    <TextBox Name="UsernameTextBox" 
+                             Height="36" 
+                             Padding="12,8" 
+                             FontSize="12" 
+                             Margin="0,0,0,16"
+                             Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"/>
+                    
+                    <!-- Password -->
+                    <TextBlock Text="Wachtwoord:" FontSize="12" FontWeight="SemiBold" Margin="0,0,0,8"/>
+                    <PasswordBox x:Name="PasswordBox" 
+                                 Height="36" 
+                                 Padding="12,8" 
+                                 FontSize="12" 
+                                 Margin="0,0,0,8"/>
+                    
+                    <CheckBox Content="Automatisch inloggen"
+                              Margin="0,0,0,12"
+                              IsChecked="{Binding AutoLoginEnabled}"/>
+
+                    <!-- Error Message -->
+                    <TextBlock Text="{Binding ErrorMessage}" 
+                               Foreground="#D32F2F" 
+                               FontSize="11" 
+                               TextWrapping="Wrap" 
+                               Margin="0,0,0,16"
+                               Visibility="{Binding ErrorMessage, Converter={StaticResource StringToVisibilityConverter}}"/>
+                    
+                    <!-- Login Button -->
+                    <Button Name="LoginButton"
+                            Content="Inloggen" 
+                            Height="40" 
+                            FontSize="14" 
+                            FontWeight="SemiBold" 
+                            Background="#0066CC" 
+                            Foreground="White" 
+                            Cursor="Hand"
+                            Command="{Binding LoginCommand}"/>
+                    
+                    <!-- Loading Indicator -->
+                    <TextBlock Text="Bezig met inloggen..." 
+                               Foreground="#0066CC" 
+                               FontSize="12" 
+                               TextAlignment="Center" 
+                               Margin="0,12,0,0"
+                               Visibility="{Binding IsLoading, Converter={StaticResource BoolToVisibilityConverter}}"/>
+                </StackPanel>
+            </Border>
+            
+            <!-- Footer -->
+            <TextBlock Text="Veilige authenticatie met JWT tokens" 
+                       FontSize="11" 
+                       Foreground="#999999" 
+                       TextAlignment="Center" 
+                       Margin="0,30,0,0"/>
+        </StackPanel>
+
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="520"
+                    Visibility="{Binding IsAuthenticated, Converter={StaticResource BoolToVisibilityConverter}}">
+            <TextBlock Text="iAdmin" 
+                       FontSize="32" 
+                       FontWeight="Bold" 
+                       Foreground="#0066CC" 
+                       TextAlignment="Center" 
+                       Margin="0,0,0,8"/>
+
+            <TextBlock Text="Ingelogd als administrator" 
+                       FontSize="16" 
+                       Foreground="#1F2937" 
+                       TextAlignment="Center" 
+                       Margin="0,0,0,24"/>
+
+            <Border BorderBrush="#E0E0E0" BorderThickness="1" CornerRadius="8" Background="White" Padding="24">
+                <StackPanel>
+                    <TextBlock Text="Sessie actief" FontSize="18" FontWeight="SemiBold" Margin="0,0,0,12"/>
+                    <TextBlock Text="Je kunt nu administrator acties uitvoeren zonder opnieuw in te loggen." 
+                               TextWrapping="Wrap" Foreground="#4B5563" Margin="0,0,0,16"/>
+                    <TextBlock Text="Auto-login staat ingesteld op basis van je keuze bij het inloggen."
+                               TextWrapping="Wrap" Foreground="#4B5563"/>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+    </Grid>
+</Window>

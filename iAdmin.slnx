@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="iAdmin.Client/iAdmin.Client.csproj" />
+  <Project Path="iAdmin.Common/iAdmin.Common.csproj" />
+  <Project Path="iAdmin.Data/iAdmin.Data.csproj" />
+  <Project Path="iAdmin.Server/iAdmin.Server.csproj" />
+</Solution>
