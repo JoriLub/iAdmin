@@ -170,3 +170,13 @@ D:\Projects\LubSoft\iAdmin\iAdmin.Server\obj\Debug\net10.0\refint\iAdmin.Server.
 D:\Projects\LubSoft\iAdmin\iAdmin.Server\obj\Debug\net10.0\iAdmin.Server.pdb
 D:\Projects\LubSoft\iAdmin\iAdmin.Server\obj\Debug\net10.0\iAdmin.Server.genruntimeconfig.cache
 D:\Projects\LubSoft\iAdmin\iAdmin.Server\obj\Debug\net10.0\ref\iAdmin.Server.dll
+D:\Projects\LubSoft\iAdmin\iAdmin.Server\bin\Debug\net10.0\appsettings.Production.json
+D:\Projects\LubSoft\iAdmin\iAdmin.Server\obj\Debug\net10.0\iAdmin.Server.sourcelink.json
+D:\Projects\LubSoft\iAdmin\iAdmin.Server\bin\Debug\net10.0\publish\prod\web.config
+D:\Projects\LubSoft\iAdmin\iAdmin.Server\bin\Debug\net10.0\publish\prod\appsettings.Development.json
+D:\Projects\LubSoft\iAdmin\iAdmin.Server\bin\Debug\net10.0\publish\prod\appsettings.json
+D:\Projects\LubSoft\iAdmin\iAdmin.Server\bin\Debug\net10.0\publish\prod\appsettings.Production.json
+D:\Projects\LubSoft\iAdmin\iAdmin.Server\bin\Debug\net10.0\publish\prod\iAdmin.Server.deps.json
+D:\Projects\LubSoft\iAdmin\iAdmin.Server\bin\Debug\net10.0\publish\prod\iAdmin.Server.runtimeconfig.json
+D:\Projects\LubSoft\iAdmin\iAdmin.Server\bin\Debug\net10.0\publish\prod\iAdmin.Server.staticwebassets.endpoints.json
+D:\Projects\LubSoft\iAdmin\iAdmin.Server\bin\Debug\net10.0\Scalar.AspNetCore.dll

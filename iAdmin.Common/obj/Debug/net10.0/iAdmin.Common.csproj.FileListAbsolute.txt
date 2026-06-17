@@ -10,3 +10,4 @@ D:\Projects\LubSoft\iAdmin\iAdmin.Common\obj\Debug\net10.0\iAdmin.Common.dll
 D:\Projects\LubSoft\iAdmin\iAdmin.Common\obj\Debug\net10.0\refint\iAdmin.Common.dll
 D:\Projects\LubSoft\iAdmin\iAdmin.Common\obj\Debug\net10.0\iAdmin.Common.pdb
 D:\Projects\LubSoft\iAdmin\iAdmin.Common\obj\Debug\net10.0\ref\iAdmin.Common.dll
+D:\Projects\LubSoft\iAdmin\iAdmin.Common\obj\Debug\net10.0\iAdmin.Common.sourcelink.json

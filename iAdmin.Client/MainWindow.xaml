@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="iAdmin - Administrator Mode" 
         Height="600" Width="800"
+        Icon="Resources/iadmin.ico"
         WindowStartupLocation="CenterScreen">
     <Grid Background="#F5F5F5">
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="400"
@@ -86,30 +87,247 @@
                        Margin="0,30,0,0"/>
         </StackPanel>
 
-        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="520"
-                    Visibility="{Binding IsAuthenticated, Converter={StaticResource BoolToVisibilityConverter}}">
-            <TextBlock Text="iAdmin" 
-                       FontSize="32" 
-                       FontWeight="Bold" 
-                       Foreground="#0066CC" 
-                       TextAlignment="Center" 
-                       Margin="0,0,0,8"/>
+        <Grid Width="980" Height="620"
+              Visibility="{Binding IsAuthenticated, Converter={StaticResource BoolToVisibilityConverter}}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
 
-            <TextBlock Text="Ingelogd als administrator" 
-                       FontSize="16" 
-                       Foreground="#1F2937" 
-                       TextAlignment="Center" 
-                       Margin="0,0,0,24"/>
+            <Grid Grid.Row="0" Margin="0,0,0,16">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
 
-            <Border BorderBrush="#E0E0E0" BorderThickness="1" CornerRadius="8" Background="White" Padding="24">
-                <StackPanel>
-                    <TextBlock Text="Sessie actief" FontSize="18" FontWeight="SemiBold" Margin="0,0,0,12"/>
-                    <TextBlock Text="Je kunt nu administrator acties uitvoeren zonder opnieuw in te loggen." 
-                               TextWrapping="Wrap" Foreground="#4B5563" Margin="0,0,0,16"/>
-                    <TextBlock Text="Auto-login staat ingesteld op basis van je keuze bij het inloggen."
-                               TextWrapping="Wrap" Foreground="#4B5563"/>
+                <Border Grid.Column="0" Width="52" Height="52" CornerRadius="12" Background="#0066CC" Margin="0,0,12,0">
+                    <Grid>
+                        <TextBlock Text="iA"
+                                   FontWeight="Bold"
+                                   FontSize="22"
+                                   Foreground="White"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"/>
+                    </Grid>
+                </Border>
+
+                <StackPanel Grid.Column="1">
+                    <TextBlock Text="iAdmin" 
+                               FontSize="32" 
+                               FontWeight="Bold" 
+                               Foreground="#0066CC"/>
+                    <TextBlock Text="Administrator beheercentrum"
+                               FontSize="15"
+                               Foreground="#1F2937"/>
                 </StackPanel>
-            </Border>
-        </StackPanel>
+            </Grid>
+
+            <TabControl Grid.Row="1" BorderBrush="#E0E0E0" BorderThickness="1" Background="White">
+                <TabItem Header="Applicaties">
+                    <Grid Margin="12">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2.2*"/>
+                            <ColumnDefinition Width="1.2*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Column="0" Margin="0,0,12,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid Grid.Row="0" Margin="0,0,0,12">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <TextBox Grid.Column="0"
+                                         Height="36"
+                                         Padding="10,7"
+                                         Margin="0,0,12,0"
+                                         Text="{Binding ApplicationSearchText, UpdateSourceTrigger=PropertyChanged}"
+                                         ToolTip="Zoek op naam, versie of uitgever"/>
+
+                                <Button Grid.Column="1"
+                                        Content="Vernieuwen"
+                                        Width="120"
+                                        Height="36"
+                                        Margin="0,0,12,0"
+                                        Command="{Binding LoadInstalledApplicationsCommand}"/>
+
+                                <Button Grid.Column="2"
+                                        Content="Verwijderen"
+                                        Width="120"
+                                        Height="36"
+                                        Background="#D32F2F"
+                                        Foreground="White"
+                                        Command="{Binding UninstallSelectedApplicationCommand}"/>
+                            </Grid>
+
+                            <DataGrid Grid.Row="1"
+                                      ItemsSource="{Binding InstalledApplications}"
+                                      SelectedItem="{Binding SelectedApplication, Mode=TwoWay}"
+                                      AutoGenerateColumns="False"
+                                      CanUserAddRows="False"
+                                      IsReadOnly="True"
+                                      SelectionMode="Single"
+                                      GridLinesVisibility="Horizontal"
+                                      HeadersVisibility="Column"
+                                      RowHeaderWidth="0">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Naam" Binding="{Binding DisplayName}" Width="2*"/>
+                                    <DataGridTextColumn Header="Versie" Binding="{Binding DisplayVersion}" Width="*"/>
+                                    <DataGridTextColumn Header="Uitgever" Binding="{Binding Publisher}" Width="2*"/>
+                                    <DataGridTextColumn Header="Installatiepad" Binding="{Binding InstallLocation}" Width="2*"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
+
+                        <Border Grid.Column="1" BorderBrush="#E6E6E6" BorderThickness="1" CornerRadius="6" Padding="12" Background="#FCFCFC">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+
+                                <TextBlock Grid.Row="0" Text="Uninstall details" FontWeight="SemiBold" FontSize="14" Margin="0,0,0,8"/>
+                                <TextBlock Grid.Row="1" Text="{Binding UninstallDetails}" TextWrapping="Wrap" FontSize="12" Foreground="#374151"/>
+                                <TextBlock Grid.Row="2"
+                                           Text="Uninstall bezig..."
+                                           Margin="0,10,0,8"
+                                           Foreground="#0066CC"
+                                           Visibility="{Binding IsUninstallInProgress, Converter={StaticResource BoolToVisibilityConverter}}"/>
+
+                                <ListBox Grid.Row="3" ItemsSource="{Binding UninstallHistory}">
+                                    <ListBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <Border BorderBrush="#E5E7EB" BorderThickness="0,0,0,1" Padding="0,6">
+                                                <StackPanel>
+                                                    <TextBlock Text="{Binding ApplicationName}" FontWeight="SemiBold"/>
+                                                    <TextBlock Text="{Binding Message}" FontSize="11" Foreground="#4B5563"/>
+                                                    <TextBlock FontSize="11" Foreground="#6B7280">
+                                                        <Run Text="ExitCode: "/>
+                                                        <Run Text="{Binding ExitCode}"/>
+                                                        <Run Text="  -  UTC: "/>
+                                                        <Run Text="{Binding TimestampUtc}"/>
+                                                    </TextBlock>
+                                                </StackPanel>
+                                            </Border>
+                                        </DataTemplate>
+                                    </ListBox.ItemTemplate>
+                                </ListBox>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </TabItem>
+
+                <TabItem Header="Bestanden &amp; Schijven">
+                    <Grid Margin="12">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid Grid.Row="0" Margin="0,0,0,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="160"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <ComboBox Grid.Column="0"
+                                      Margin="0,0,12,0"
+                                      Height="36"
+                                      ItemsSource="{Binding AvailableDrives}"
+                                      SelectedItem="{Binding SelectedDrive, Mode=TwoWay}"/>
+
+                            <TextBox Grid.Column="1"
+                                     Margin="0,0,12,0"
+                                     Height="36"
+                                     Padding="10,7"
+                                     Text="{Binding CurrentBrowsePath, UpdateSourceTrigger=PropertyChanged}"/>
+
+                            <Button Grid.Column="2"
+                                    Width="120"
+                                    Height="36"
+                                    Margin="0,0,12,0"
+                                    Content="Laden"
+                                    Command="{Binding LoadFileSystemEntriesCommand}"/>
+
+                            <Button Grid.Column="3"
+                                    Width="140"
+                                    Height="36"
+                                    Content="Permanent verwijderen"
+                                    Background="#D32F2F"
+                                    Foreground="White"
+                                    Command="{Binding DeleteSelectedFileSystemEntryCommand}"/>
+                        </Grid>
+
+                        <DataGrid Grid.Row="1"
+                                  ItemsSource="{Binding FileSystemEntries}"
+                                  SelectedItem="{Binding SelectedFileSystemEntry, Mode=TwoWay}"
+                                  AutoGenerateColumns="False"
+                                  CanUserAddRows="False"
+                                  IsReadOnly="True"
+                                  SelectionMode="Single"
+                                  GridLinesVisibility="Horizontal"
+                                  HeadersVisibility="Column"
+                                  RowHeaderWidth="0">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Naam" Binding="{Binding Name}" Width="2*"/>
+                                <DataGridTextColumn Header="Type" Binding="{Binding EntryType}" Width="*"/>
+                                <DataGridTextColumn Header="Grootte" Binding="{Binding SizeDisplay}" Width="*"/>
+                                <DataGridTextColumn Header="Volledig pad" Binding="{Binding FullPath}" Width="3*"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+
+                        <Border Grid.Row="2" Margin="0,10,0,0" BorderBrush="#E5E7EB" BorderThickness="1" CornerRadius="6" Padding="10" Background="#FCFCFC">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Margin="0,0,8,6" Text="Bron:"/>
+                                <TextBox Grid.Row="0" Grid.Column="1" Margin="0,0,8,6" Height="32" Text="{Binding CopyMoveSourcePath, UpdateSourceTrigger=PropertyChanged}"/>
+
+                                <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Margin="0,0,8,6" Text="Doel:"/>
+                                <TextBox Grid.Row="1" Grid.Column="1" Margin="0,0,8,6" Height="32" Text="{Binding CopyMoveDestinationPath, UpdateSourceTrigger=PropertyChanged}"/>
+
+                                <CheckBox Grid.Row="2" Grid.Column="1" Margin="0,0,8,0" IsChecked="{Binding OverwriteExisting}" Content="Bestaande bestanden overschrijven"/>
+
+                                <StackPanel Grid.Row="0" Grid.RowSpan="3" Grid.Column="2" Orientation="Vertical">
+                                    <Button Width="120" Height="32" Margin="0,0,0,6" Content="Kopieer" Command="{Binding CopyPathCommand}"/>
+                                    <Button Width="120" Height="32" Content="Verplaats" Command="{Binding MovePathCommand}"/>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </TabItem>
+            </TabControl>
+
+            <StackPanel Grid.Row="2" Orientation="Vertical" Margin="0,12,0,0">
+                <TextBlock Text="{Binding ApplicationsStatusMessage}" Foreground="#4B5563" FontSize="12"/>
+                <TextBlock Text="{Binding FileSystemStatusMessage}" Foreground="#4B5563" FontSize="12" Margin="0,4,0,0"/>
+                <TextBlock Text="Bezig met laden..."
+                           Foreground="#0066CC"
+                           FontSize="12"
+                           Margin="0,4,0,0"
+                           Visibility="{Binding IsFileSystemLoading, Converter={StaticResource BoolToVisibilityConverter}}"/>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Window>

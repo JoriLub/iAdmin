@@ -74,3 +74,6 @@ D:\Projects\LubSoft\iAdmin\iAdmin.Client\bin\Debug\net10.0-windows\Serilog.Sinks
 D:\Projects\LubSoft\iAdmin\iAdmin.Client\bin\Debug\net10.0-windows\Serilog.Sinks.Debug.dll
 D:\Projects\LubSoft\iAdmin\iAdmin.Client\obj\Debug\net10.0-windows\GeneratedInternalTypeHelper.g.cs
 D:\Projects\LubSoft\iAdmin\iAdmin.Client\obj\Debug\net10.0-windows\App.baml
+D:\Projects\LubSoft\iAdmin\iAdmin.Client\obj\Debug\net10.0-windows\iAdmin.Client.sourcelink.json
+D:\Projects\LubSoft\iAdmin\iAdmin.Client\bin\Debug\net10.0-windows\appsettings.json
+D:\Projects\LubSoft\iAdmin\iAdmin.Client\bin\Debug\net10.0-windows\appsettings.Development.json

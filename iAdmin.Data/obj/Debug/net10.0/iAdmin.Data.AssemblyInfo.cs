@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("iAdmin.Data")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9965309d0e8a51fe2fddd117350b4c87fd6ffd4f")]
 [assembly: System.Reflection.AssemblyProductAttribute("iAdmin.Data")]
 [assembly: System.Reflection.AssemblyTitleAttribute("iAdmin.Data")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

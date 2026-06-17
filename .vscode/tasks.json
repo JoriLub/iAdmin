@@ -1,0 +1,62 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Upload naar GitHub",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}/Push-ToGitHub.ps1"
+      ],
+      "group": {
+        "kind": "none",
+        "isDefault": false
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new",
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "GitHub: Status & Log",
+      "type": "shell",
+      "command": "git",
+      "args": [
+        "log",
+        "--oneline",
+        "-10"
+      ],
+      "group": {
+        "kind": "none",
+        "isDefault": false
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "GitHub: Controleer Status",
+      "type": "shell",
+      "command": "git",
+      "args": [
+        "status"
+      ],
+      "group": {
+        "kind": "none",
+        "isDefault": false
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    }
+  ]
+}

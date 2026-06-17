@@ -13,3 +13,4 @@ D:\Projects\LubSoft\iAdmin\iAdmin.Data\obj\Debug\net10.0\iAdmin.Data.dll
 D:\Projects\LubSoft\iAdmin\iAdmin.Data\obj\Debug\net10.0\refint\iAdmin.Data.dll
 D:\Projects\LubSoft\iAdmin\iAdmin.Data\obj\Debug\net10.0\iAdmin.Data.pdb
 D:\Projects\LubSoft\iAdmin\iAdmin.Data\obj\Debug\net10.0\ref\iAdmin.Data.dll
+D:\Projects\LubSoft\iAdmin\iAdmin.Data\obj\Debug\net10.0\iAdmin.Data.sourcelink.json

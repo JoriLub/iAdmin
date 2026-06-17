@@ -40,14 +40,19 @@ public partial class App : Application
             .UseSerilog()
             .ConfigureServices((context, services) =>
             {
+                var apiBaseUrl = context.Configuration["Api:BaseUrl"] ?? "http://localhost:5000";
+                Log.Information("Client API BaseUrl: {ApiBaseUrl}", apiBaseUrl);
+
                 services.AddHttpClient<IApiClient, ApiClient>()
                     .ConfigureHttpClient(client =>
                     {
-                        client.BaseAddress = new Uri("http://localhost:5000");
+                        client.BaseAddress = new Uri(apiBaseUrl);
                         client.Timeout = TimeSpan.FromSeconds(30);
                     });
 
                 services.AddSingleton<ITokenService, TokenService>();
+                services.AddSingleton<IInstalledApplicationService, InstalledApplicationService>();
+                services.AddSingleton<IFileSystemAdminService, FileSystemAdminService>();
                 services.AddSingleton<LoginViewModel>();
                 services.AddSingleton<MainWindow>();
             })

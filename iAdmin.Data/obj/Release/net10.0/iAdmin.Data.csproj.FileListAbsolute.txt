@@ -1,0 +1,16 @@
+D:\Projects\LubSoft\iAdmin\iAdmin.Data\bin\Release\net10.0\iAdmin.Data.deps.json
+D:\Projects\LubSoft\iAdmin\iAdmin.Data\bin\Release\net10.0\iAdmin.Data.dll
+D:\Projects\LubSoft\iAdmin\iAdmin.Data\bin\Release\net10.0\iAdmin.Data.pdb
+D:\Projects\LubSoft\iAdmin\iAdmin.Data\bin\Release\net10.0\iAdmin.Common.dll
+D:\Projects\LubSoft\iAdmin\iAdmin.Data\bin\Release\net10.0\iAdmin.Common.pdb
+D:\Projects\LubSoft\iAdmin\iAdmin.Data\obj\Release\net10.0\iAdmin.Data.csproj.AssemblyReference.cache
+D:\Projects\LubSoft\iAdmin\iAdmin.Data\obj\Release\net10.0\iAdmin.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\LubSoft\iAdmin\iAdmin.Data\obj\Release\net10.0\iAdmin.Data.AssemblyInfoInputs.cache
+D:\Projects\LubSoft\iAdmin\iAdmin.Data\obj\Release\net10.0\iAdmin.Data.AssemblyInfo.cs
+D:\Projects\LubSoft\iAdmin\iAdmin.Data\obj\Release\net10.0\iAdmin.Data.csproj.CoreCompileInputs.cache
+D:\Projects\LubSoft\iAdmin\iAdmin.Data\obj\Release\net10.0\iAdmin.Data.sourcelink.json
+D:\Projects\LubSoft\iAdmin\iAdmin.Data\obj\Release\net10.0\iAdmin.D.85D0BAB1.Up2Date
+D:\Projects\LubSoft\iAdmin\iAdmin.Data\obj\Release\net10.0\iAdmin.Data.dll
+D:\Projects\LubSoft\iAdmin\iAdmin.Data\obj\Release\net10.0\refint\iAdmin.Data.dll
+D:\Projects\LubSoft\iAdmin\iAdmin.Data\obj\Release\net10.0\iAdmin.Data.pdb
+D:\Projects\LubSoft\iAdmin\iAdmin.Data\obj\Release\net10.0\ref\iAdmin.Data.dll

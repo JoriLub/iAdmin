@@ -27,7 +27,6 @@ public class ApiClient : IApiClient
     {
         _httpClient = httpClient;
         _logger = logger;
-        _httpClient.BaseAddress = new Uri("http://localhost:5000");
         _httpClient.Timeout = TimeSpan.FromSeconds(30);
     }
 
